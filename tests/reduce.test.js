@@ -11,14 +11,18 @@ describe('reduce', () => {
             let inputArray = [1, 2, 3];
             assert.equal(learnReduce.doSum(inputArray), 6);
         });
+    });
 
+    context('addNumberToEachElement', () => {
         it('should add 3 to each element of array', () => {
             let inputArray = [1, 2, 3];
             let resultArray = learnReduce.addNumberToEachElement(inputArray, 3);
 
             assert.deepEqual(resultArray, [4, 5, 6]);
         });
+    });
 
+    context('applyLogicToEachElement', () => {
         it('should add 3 to each element of array', () => {
             let addThree = function (element) {
                 return element + 3;
