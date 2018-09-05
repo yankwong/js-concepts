@@ -38,5 +38,14 @@ describe('reduce', () => {
 
             assert.deepEqual(resultArray, inputArray);
         });
+
+        it('should return the original array when given function encounter error', () => {
+            let inputArray = [1, 2, 3];
+            let resultArray = learnReduce.applyLogicToEachElement(inputArray, (element) => {
+                throw new Error('Generic Error');
+            });
+
+            assert.deepEqual(resultArray, inputArray);
+        });
     });
 });

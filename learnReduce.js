@@ -19,7 +19,13 @@ function addNumberToEachElement(numArray, number) {
 function applyLogicToEachElement(inputArray, functionToCall) {
     if (typeof functionToCall === 'function') {
         return inputArray.reduce( (total, element) => {
-            total.push(functionToCall.call(this, element));
+            try {
+                total.push(functionToCall.call(this, element));
+            }
+            catch (error){
+                console.log(`Error Encountered: ${error.message}`);
+                total.push(element);
+            }
             return total;
         }, []);
     }
