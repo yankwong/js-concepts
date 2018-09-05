@@ -23,13 +23,20 @@ describe('reduce', () => {
     });
 
     context('applyLogicToEachElement', () => {
-        it('should add 3 to each element of array', () => {
+        it('should apply function to each element of array if given a function', () => {
+            let inputArray = [1, 2, 3];
             let addThree = function (element) {
                 return element + 3;
             };
-            let inputArray = [1, 2, 3];
 
             assert.deepEqual(learnReduce.applyLogicToEachElement(inputArray, addThree), [4, 5, 6]);
+        });
+
+        it('should return the original array when not given a function', () => {
+            let inputArray = [1, 2, 3];
+            let resultArray = learnReduce.applyLogicToEachElement(inputArray, 'Not A Function');
+
+            assert.deepEqual(resultArray, inputArray);
         });
     });
 });
