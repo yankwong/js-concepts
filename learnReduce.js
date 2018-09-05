@@ -16,8 +16,22 @@ function addNumberToEachElement(numArray, number) {
     }, []);
 }
 
+function applyLogicToEachElement(inputArray, functionToCall) {
+    if (typeof functionToCall === 'function') {
+        return inputArray.reduce( (total, element) => {
+            total.push(functionToCall.call(this, element));
+            return total;
+        }, []);
+    }
+    else {
+        return inputArray;
+    }
+    
+}
+
 module.exports = {
     doSum,
-    addNumberToEachElement
+    addNumberToEachElement,
+    applyLogicToEachElement
 }
 
