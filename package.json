@@ -1,0 +1,21 @@
+{
+  "name": "js-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "apply.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "reduce": "node learnReduce.js",
+    "async": "node learnAsync.js",
+    "test": "node node_modules/mocha/bin/mocha --recursive ./tests"
+  },
+  "author": "Andy Kwong",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "sinon": "^6.2.0"
+  }
+}
