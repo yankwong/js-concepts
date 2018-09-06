@@ -16,6 +16,18 @@ function addNumberToEachElement(numArray, number) {
     }, []);
 }
 
+function getAverageOfArray(numArray) {
+    return numArray.reduce( (total, amount, currentIndex) => {
+        
+        total += amount;
+        if (currentIndex === numArray.length - 1) {
+            total /= numArray.length;
+        }
+
+        return total;
+    });
+}
+
 function applyLogicToEachElement(inputArray, functionToCall) {
     if (typeof functionToCall === 'function') {
         return inputArray.reduce( (total, element) => {
@@ -32,12 +44,12 @@ function applyLogicToEachElement(inputArray, functionToCall) {
     else {
         return inputArray;
     }
-    
 }
 
 module.exports = {
     doSum,
     addNumberToEachElement,
-    applyLogicToEachElement
+    applyLogicToEachElement,
+    getAverageOfArray
 }
 
