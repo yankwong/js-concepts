@@ -1,5 +1,6 @@
 'use strict';
 
+// reduce (accumulator, currentValue);
 
 function doSum(numArray) {
     return numArray.reduce( (total, amount) => {
@@ -44,6 +45,23 @@ function applyLogicToEachElement(inputArray, functionToCall) {
     else {
         return inputArray;
     }
+}
+
+function fizzBuzz(numberArray) {
+    return numberArray.reduce((accumulator, element) => {
+        let pushValue = '';
+        if (element % 3 === 0) {
+            pushValue += 'fizz';
+        }
+        if (element % 5 === 0) {
+            pushValue += 'buzz';
+        }
+        if (pushValue === '') {
+            pushValue = element;
+        }
+        accumulator.push(pushValue);
+        return accumulator;
+    }, [])
 }
 
 module.exports = {
