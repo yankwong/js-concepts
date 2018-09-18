@@ -76,6 +76,20 @@ describe('reduce', () => {
         });
 
         it('should filter out integers', () => {
+            const randomArray = [4, 3.5, 4.44, 1.9, 1];
+            const correctResult = [3.5, 4.44, 1.9];
+            const isInt = function (value) {
+                if (isNaN(value)) {
+                  return false;
+                }
+                var x = parseFloat(value);
+                return (x | 0) === x;
+            };
+            const isNotInt = function(value) {
+                return !isInt(value);
+            }
+
+            const result = learnReduce.doFilter(randomArray, isNotInt);
 
         });
     })
