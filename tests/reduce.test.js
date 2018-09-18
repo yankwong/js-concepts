@@ -57,4 +57,26 @@ describe('reduce', () => {
             assert.equal(idealResult, result);
         });
     });
+
+    context('doFilter', () => {
+        it('should filter out non-integers', () => {
+            const randomArray = [1, 'a', 'z', 3, 5];
+            const correctResult = [1, 3, 5];
+            const isInt = function (value) {
+                if (isNaN(value)) {
+                  return false;
+                }
+                var x = parseFloat(value);
+                return (x | 0) === x;
+              };
+              
+            const result = learnReduce.doFilter(randomArray, isInt);
+
+            assert.deepEqual(result, correctResult);
+        });
+
+        it('should filter out integers', () => {
+
+        });
+    })
 });

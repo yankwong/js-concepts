@@ -74,11 +74,22 @@ function getHelloWorld() {
     }, '');
 }
 
+// make sure accumulator always get returned so it doesn't break the reduce chain
+function doFilter(someArray, requirementFunction) {
+    return someArray.reduce((accumulator, element) => {
+        if (requirementFunction(element)) {
+            accumulator.push(element);
+        }
+        return accumulator;
+    }, []);
+}
+
 module.exports = {
     doSum,
     addNumberToEachElement,
     applyLogicToEachElement,
     getAverageOfArray,
-    getHelloWorld
+    getHelloWorld,
+    doFilter
 }
 
