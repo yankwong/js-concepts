@@ -64,10 +64,21 @@ function fizzBuzz(numberArray) {
     }, [])
 }
 
+// fun thing to notice, calling reduce() on a single element array (with no initial value) will
+// cause it to not run
+function getHelloWorld() {
+    const singleItemArray = [1];
+    
+    return singleItemArray.reduce((accumulator, element) => {
+        return accumulator + 'Hello World!';
+    }, '');
+}
+
 module.exports = {
     doSum,
     addNumberToEachElement,
     applyLogicToEachElement,
-    getAverageOfArray
+    getAverageOfArray,
+    getHelloWorld
 }
 

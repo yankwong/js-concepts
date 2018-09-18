@@ -48,4 +48,13 @@ describe('reduce', () => {
             assert.deepEqual(resultArray, inputArray);
         });
     });
+
+    context('getHelloWorld', () => {
+        it('should get one Hello World', () => {
+            const idealResult = 'Hello World!';
+            const result = learnReduce.getHelloWorld();
+
+            assert.equal(idealResult, result);
+        });
+    });
 });
