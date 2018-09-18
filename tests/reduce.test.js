@@ -49,6 +49,15 @@ describe('reduce', () => {
         });
     });
 
+    context('FizzBuzz', () => {
+        it('should output FizzBuzz', () => {
+            const expectedResult = ['fizzbuzz', 1, 2, 'fizz', 4, 'buzz'];
+            const result = learnReduce.fizzBuzz([0, 1, 2, 3, 4, 5]);
+
+            assert.deepEqual(expectedResult, result);
+        });
+    });
+
     context('getHelloWorld', () => {
         it('should get one Hello World', () => {
             const idealResult = 'Hello World!';

@@ -89,6 +89,7 @@ module.exports = {
     addNumberToEachElement,
     applyLogicToEachElement,
     getAverageOfArray,
+    fizzBuzz,
     getHelloWorld,
     doFilter
 }
