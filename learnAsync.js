@@ -13,11 +13,9 @@ function runTwoFunctions(functionOne, functionTwo, callback) {
             callback(new Error('Error in function execution'), null);
         }
         else {
-            console.log('yoafyasfas!!!!!df', result);
             callback(null, result);
         }
     });
-
 }
 
 module.exports = {
