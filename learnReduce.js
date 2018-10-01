@@ -88,27 +88,18 @@ function doFilter(someArray, requirementFunction) {
 // F1 = 1
 // Fn = F(n-1) + F(n-2)
 function getFibonacciArray(outputLength) {
-    const initSequence = [0, 1];
+    let resultArray = Array(outputLength).fill(0);
 
-    let resultArray = new Array(outputLength);
-
-}
-
-// quick experiment to add a prototype function that does find
-// not unit tested, not exported
-Array.prototype.myFind = function(filterFunction) {
-    var indexArray = this.reduce((accumulator, element, index) => { 
-        if (filterFunction(element)) {
-            accumulator.push(index);
+    return resultArray.reduce((accumulator, element, index) => {
+        if (index === 0) {
+            accumulator.push(0);
+        } else if (index === 1) {
+            accumulator.push(1);
+        } else {
+            accumulator.push(accumulator[index-1] + accumulator[index-2]);
         }
         return accumulator;
     }, []);
-
-    if (indexArray.length) {
-        return indexArray.pop();
-    } else {
-        return -1;
-    }
 }
 
 module.exports = {

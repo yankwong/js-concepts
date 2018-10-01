@@ -21,4 +21,5 @@ describe('learnCurrying', () => {
             assert.equal('dog', concatNothingWithThing('dog'));
         });
     });
+    
 });

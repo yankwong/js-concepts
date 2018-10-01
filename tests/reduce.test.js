@@ -101,5 +101,12 @@ describe('reduce', () => {
             const result = learnReduce.doFilter(randomArray, isNotInt);
 
         });
-    })
+    });
+
+    context('getFibonacciArray', () => {
+        it('should ouput Finbonacci Array of 2 element', () => {
+            const resultArray = [0, 1];
+            assert.deepEqual(resultArray, learnReduce.getFibonacciArray(2));
+        })
+    });
 });
