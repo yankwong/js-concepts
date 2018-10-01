@@ -74,7 +74,7 @@ function getHelloWorld() {
     }, '');
 }
 
-// make sure accumulator always get returned so it doesn't break the reduce chain
+// make sure accumulator always need to be returned so it doesn't break the reduce chain
 function doFilter(someArray, requirementFunction) {
     return someArray.reduce((accumulator, element) => {
         if (requirementFunction(element)) {
@@ -84,6 +84,33 @@ function doFilter(someArray, requirementFunction) {
     }, []);
 }
 
+// F0 = 0 
+// F1 = 1
+// Fn = F(n-1) + F(n-2)
+function getFibonacciArray(outputLength) {
+    const initSequence = [0, 1];
+
+    let resultArray = new Array(outputLength);
+
+}
+
+// quick experiment to add a prototype function that does find
+// not unit tested, not exported
+Array.prototype.myFind = function(filterFunction) {
+    var indexArray = this.reduce((accumulator, element, index) => { 
+        if (filterFunction(element)) {
+            accumulator.push(index);
+        }
+        return accumulator;
+    }, []);
+
+    if (indexArray.length) {
+        return indexArray.pop();
+    } else {
+        return -1;
+    }
+}
+
 module.exports = {
     doSum,
     addNumberToEachElement,
@@ -91,6 +118,7 @@ module.exports = {
     getAverageOfArray,
     fizzBuzz,
     getHelloWorld,
-    doFilter
+    doFilter,
+    getFibonacciArray
 }
 

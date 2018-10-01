@@ -10,20 +10,25 @@ describe('async', () => {
     context('runTwoFunctions', () => {
         
         let passOneToCallback;
-        let addFiveToNumber;
+        let addFiveToParam;
+        let addTenToParam;
 
         beforeEach(()=> {
             passOneToCallback = function(callback) {
                 callback(null, 1);
             }
 
-            addFiveToNumber = function(number, callback) {
+            addFiveToParam = function(number, callback) {
                 callback(null, (number + 5));
+            }
+
+            addTenToParam = function(number, callback) {
+                callback(null, (number + 10));
             }
         });
 
         it('should give us the correct result value', (done) => {
-            learnAsync.runTwoFunctions(passOneToCallback, addFiveToNumber, (err, data) => {
+            learnAsync.runTwoFunctions(passOneToCallback, addFiveToParam, (err, data) => {
                 assert.equal(6, data);
                 done();
             });
@@ -31,7 +36,7 @@ describe('async', () => {
 
         it('should call the functions in the correct order', (done) => {
             let functionOneSpy = sinon.spy(passOneToCallback);
-            let functionTwoSpy = sinon.spy(addFiveToNumber);
+            let functionTwoSpy = sinon.spy(addFiveToParam);
 
             learnAsync.runTwoFunctions(functionOneSpy, functionTwoSpy, (err, data) => {
                 sinon.assert.callOrder(functionOneSpy, functionTwoSpy);
