@@ -104,9 +104,19 @@ describe('reduce', () => {
     });
 
     context('getFibonacciArray', () => {
+        it('should ouput Finbonacci Array of 1 element', () => {
+            const resultArray = [0];
+            assert.deepEqual(resultArray, learnReduce.getFibonacciArray(1));
+        });
+
         it('should ouput Finbonacci Array of 2 element', () => {
             const resultArray = [0, 1];
             assert.deepEqual(resultArray, learnReduce.getFibonacciArray(2));
-        })
+        });
+
+        it('should ouput Finbonacci Array of 8 element', () => {
+            const resultArray = [0, 1, 1, 2, 3, 5, 8, 13];
+            assert.deepEqual(resultArray, learnReduce.getFibonacciArray(8));
+        });
     });
 });
