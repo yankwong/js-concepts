@@ -7,6 +7,7 @@ describe('learnCurrying', () => {
 
     context('getConcatFunction', () => {
         const concatCatWithThing = learnCurrying.getConcatFunction('cat');
+        const concatNothingWithThing = learnCurrying.getConcatFunction();
         
         it('should concat "cat" with "dog"', () => {
             assert.equal('catdog', concatCatWithThing('dog'));
@@ -14,6 +15,10 @@ describe('learnCurrying', () => {
 
         it ('should concat "cat" with ""', () => {
             assert.equal('cat', concatCatWithThing());
+        });
+
+        it ('should concat "" with "dog" ', () => {
+            assert.equal('dog', concatNothingWithThing('dog'));
         });
     });
 });
