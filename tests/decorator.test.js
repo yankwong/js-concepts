@@ -3,7 +3,7 @@ const expect = require('chai').expect;
 let sinon = require('sinon');
 let learnDecorator = require('../learnDecorator');
 
-describe.only('learnDecorator', () => {
+describe('learnDecorator', () => {
 
     context('appendConsoleToAction', () => {
         it('should call console.log and action', () => {
@@ -18,7 +18,7 @@ describe.only('learnDecorator', () => {
             decoratedFunction();
 
             // assert
-            expect(consoleSpy).to.have.been.called.twice;
+            assert.equal(consoleSpy.callCount, 2);
         });
     })
 });
