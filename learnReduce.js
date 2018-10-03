@@ -1,7 +1,5 @@
 'use strict';
 
-// reduce (accumulator, currentValue);
-
 function doSum(numArray) {
     return numArray.reduce( (total, amount) => {
         return total + amount;
@@ -67,7 +65,7 @@ function fizzBuzz(numberArray) {
 // fun thing to notice, calling reduce() on a single element array (with no initial value) will
 // cause it to not run
 function getHelloWorld() {
-    const singleItemArray = [1];
+    const singleItemArray = Array(1).fill(0);
     
     return singleItemArray.reduce((accumulator, element) => {
         return accumulator + 'Hello World!';
