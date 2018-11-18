@@ -31,7 +31,7 @@ module.exports = {
     addTen,
     doAdd,
     doMultiply,
-    isNumber,
+    isLessThanTen,
     doAddTenThreeTimes,
     getFirstElement
 }
