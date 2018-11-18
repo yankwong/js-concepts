@@ -38,13 +38,13 @@ describe.only('The Basic Concepts', () => {
         it('should throw an error when a parameter is not an integer');
     });
 
-    context.skip('isNumber', ()=> {
+    context.skip('isLessThanTen', ()=> {
         it('should return true when given a number', ()=> {
-            assert.equal(learnBasics.isNumber(5), true);
+            assert.equal(learnBasics.isLessThanTen(5), true);
         });
 
         it('should return false when given a string', ()=> {
-            assert.equal(learnBasics.isNumber('hi'), false);
+            assert.equal(learnBasics.isLessThanTen('hi'), false);
         });
     });
 

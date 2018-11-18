@@ -13,7 +13,7 @@ function doMultiply(numberA, numberB) {
 }
 
 // conditional, IF
-function isNumber(parameter) {
+function isLessThanTen(parameter) {
 
 }
 

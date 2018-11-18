@@ -1,9 +1,8 @@
 'use strict'
 
 const assert = require('chai').assert;
-const expect = require('chai').expect;
-let sinon = require('sinon');
-let learnReduce = require('../learnReduce');
+// let learnReduce = require('../learnReduce');
+let learnReduce = require('../learnReduce2');
 
 describe('reduce', () => {
     context('reduceSum', () => {

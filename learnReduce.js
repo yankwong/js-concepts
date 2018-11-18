@@ -1,8 +1,8 @@
 'use strict';
 
 function doSum(numArray) {
-    return numArray.reduce( (total, amount) => {
-        return total + amount;
+    return numArray.reduce( (accumulator, element) => {
+        return accumulator + element;
     });
 }
 
